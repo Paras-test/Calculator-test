@@ -1,4 +1,5 @@
 import math
+from calculator_error import CalculatorError
 import logging
 logging.basicConfig(filename='calculator.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
