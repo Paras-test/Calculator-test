@@ -9,8 +9,9 @@ class Calculator:
         return a * b
         
     def divide(self, a, b):
-        # TODO: Implement division
-        pass
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
+        return a / b
 
 if __name__ == "__main__":
     calc = Calculator()
