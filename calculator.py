@@ -1,33 +1,33 @@
 import math
 
 class Calculator:
-    def add(self, a, b):
+    def add(self, a: float, b: float) -> float:
         return a + b
     
-    def subtract(self, a, b):
+    def subtract(self, a: float, b: float) -> float:
         return a - b
     
-    def multiply(self, a, b):
+    def multiply(self, a: float, b: float) -> float:
         return a * b
         
-    def divide(self, a, b):
+    def divide(self, a: float, b: float) -> float:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
 
-    def floor_divide(self, a, b):
+    def floor_divide(self, a: float, b: float) -> float:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a // b
 
-    def modulus(self, a, b):
+    def modulus(self, a: float, b: float) -> float:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a % b
 
-    def power(self, a, b):
+    def power(self, a: float, b: float) -> float:
         return a ** b
-    def square_root(self, a):
+    def square_root(self, a: float) -> float:
         if a < 0:
             raise ValueError("Cannot take square root of negative number")
         return math.sqrt(a)
