@@ -23,6 +23,9 @@ class Calculator:
             raise ValueError("Cannot divide by zero")
         return a % b
 
+    def power(self, a, b):
+        return a ** b
+
 if __name__ == "__main__":
     calc = Calculator()
     print("Welcome to Partial Calculator!")
