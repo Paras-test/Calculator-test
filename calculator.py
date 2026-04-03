@@ -1,26 +1,146 @@
 import math
 
 class Calculator:
+    """A simple calculator providing basic arithmetic operations.
+
+    Methods
+    -------
+    add(a, b)
+        Return the sum of a and b.
+    subtract(a, b)
+        Return the difference of a and b.
+    multiply(a, b)
+        Return the product of a and b.
+    divide(a, b)
+        Return the quotient of a divided by b.
+    floor_divide(a, b)
+        Return the floor division of a by b.
+    modulus(a, b)
+        Return the modulus of a by b.
+    power(a, b)
+        Return a raised to the power of b.
+    square_root(a)
+        Return the square root of a.
+    """
     def add(self, a: float, b: float) -> float:
+        """Return the sum of a and b.
+
+        Parameters
+        ----------
+        a : float
+            First addend.
+        b : float
+            Second addend.
+
+        Returns
+        -------
+        float
+            The sum of a and b.
+        """
         return a + b
     
     def subtract(self, a: float, b: float) -> float:
+        """Return the difference of a and b.
+
+        Parameters
+        ----------
+        a : float
+            Minuend.
+        b : float
+            Subtrahend.
+
+        Returns
+        -------
+        float
+            The difference a - b.
+        """
         return a - b
     
     def multiply(self, a: float, b: float) -> float:
+        """Return the product of a and b.
+
+        Parameters
+        ----------
+        a : float
+            First factor.
+        b : float
+            Second factor.
+
+        Returns
+        -------
+        float
+            The product a * b.
+        """
         return a * b
         
     def divide(self, a: float, b: float) -> float:
+        """Return the quotient of a divided by b.
+
+        Parameters
+        ----------
+        a : float
+            Dividend.
+        b : float
+            Divisor.
+
+        Returns
+        -------
+        float
+            The quotient a / b.
+
+        Raises
+        ------
+        ValueError
+            If b is zero.
+        """
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
 
     def floor_divide(self, a: float, b: float) -> float:
+        """Return the floor division of a by b.
+
+        Parameters
+        ----------
+        a : float
+            Dividend.
+        b : float
+            Divisor.
+
+        Returns
+        -------
+        float
+            The floor division a // b.
+
+        Raises
+        ------
+        ValueError
+            If b is zero.
+        """
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a // b
 
     def modulus(self, a: float, b: float) -> float:
+        """Return the modulus of a by b.
+
+        Parameters
+        ----------
+        a : float
+            Dividend.
+        b : float
+            Divisor.
+
+        Returns
+        -------
+        float
+            The remainder a % b.
+
+        Raises
+        ------
+        ValueError
+            If b is zero.
+        """
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a % b
