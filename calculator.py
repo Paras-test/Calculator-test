@@ -1,3 +1,5 @@
+import math
+
 class Calculator:
     def add(self, a, b):
         return a + b
@@ -25,6 +27,10 @@ class Calculator:
 
     def power(self, a, b):
         return a ** b
+    def square_root(self, a):
+        if a < 0:
+            raise ValueError("Cannot take square root of negative number")
+        return math.sqrt(a)
 
 if __name__ == "__main__":
     calc = Calculator()
