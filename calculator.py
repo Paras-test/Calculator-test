@@ -1,8 +1,13 @@
 import math
+import logging
+logging.basicConfig(filename='calculator.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
 
 class Calculator:
 
     def evaluate_expression(self, expression: str) -> float:
+        logging.info(f'Evaluating expression: {expression}')
+
         try:
             return eval(expression)
         except Exception as e:
@@ -29,6 +34,8 @@ class Calculator:
         Return the square root of a.
     """
     def add(self, a: float, b: float) -> float:
+        logging.info(f'Adding {a} and {b}')
+
         """Return the sum of a and b.
 
         Parameters
@@ -46,6 +53,8 @@ class Calculator:
         return a + b
     
     def subtract(self, a: float, b: float) -> float:
+        logging.info(f'Subtracting {b} from {a}')
+
         """Return the difference of a and b.
 
         Parameters
@@ -63,6 +72,8 @@ class Calculator:
         return a - b
     
     def multiply(self, a: float, b: float) -> float:
+        logging.info(f'Multiplying {a} and {b}')
+
         """Return the product of a and b.
 
         Parameters
@@ -80,6 +91,8 @@ class Calculator:
         return a * b
         
     def divide(self, a: float, b: float) -> float:
+        logging.info(f'Dividing {a} by {b}')
+
         """Return the quotient of a divided by b.
 
         Parameters
