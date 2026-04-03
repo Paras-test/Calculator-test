@@ -1,6 +1,11 @@
 import math
 
 class Calculator:
+    def evaluate_expression(self, expression: str) -> float:
+        try:
+            return eval(expression)
+        except Exception as e:
+            raise CalculatorError(f"Failed to evaluate expression: {str(e)}")
     """A simple calculator providing basic arithmetic operations.
 
     Methods
