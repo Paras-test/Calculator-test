@@ -153,6 +153,10 @@ class Calculator:
         return math.sqrt(a)
 
 if __name__ == "__main__":
+    try:
+        print("10 + 5 =", calc.add(10, 5))
+    except Exception as e:
+        print(f"An error occurred: {e}")
     calc = Calculator()
     print("Welcome to Partial Calculator!")
     print("10 + 5 =", calc.add(10, 5))
