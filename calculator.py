@@ -1,6 +1,7 @@
 import math
 
 class Calculator:
+
     def evaluate_expression(self, expression: str) -> float:
         try:
             return eval(expression)
