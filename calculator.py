@@ -166,7 +166,10 @@ class Calculator:
         return a % b
 
     def power(self, a: float, b: float) -> float:
+        """Return a raised to the power of b."""
+        logging.info(f'Raising {a} to the power of {b}')
         return a ** b
+
     def square_root(self, a: float) -> float:
         if a < 0:
             raise CalculatorError("Cannot take square root of negative number")
