@@ -33,8 +33,12 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.modulus(10, 2), 0)
         self.assertRaises(CalculatorError, self.calc.modulus, 10, 0)
 
-    def test_power(self):
+    def test_power_positive_exponent(self):
         self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(3, 2), 9)
+
+    def test_power_zero_exponent(self):
+        self.assertEqual(self.calc.power(5, 0), 1)
 
     def test_square_root(self):
         self.assertEqual(self.calc.square_root(4), 2)
