@@ -1,12 +1,12 @@
 import math
 
-def sine(x):
+def sin(x):
     return math.sin(math.radians(x))
 
-def cosine(x):
+def cos(x):
     return math.cos(math.radians(x))
 
-def tangent(x):
+def tan(x):
     return math.tan(math.radians(x))
 
 def log(x):
