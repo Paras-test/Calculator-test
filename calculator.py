@@ -1,4 +1,6 @@
 import math
+from .trigonometry import sine, cosine, tangent
+from .logarithm import logarithm
 
 class Calculator:
     def add(self, a, b):
@@ -34,17 +36,17 @@ class Calculator:
         return math.sqrt(a)
 
     def sine(self, angle):
-        return math.sin(angle)
+        return sine(angle)
 
     def cosine(self, angle):
-        return math.cos(angle)
+        return cosine(angle)
 
     def tangent(self, angle):
         if angle == math.pi / 2:
             raise ValueError('Tangent of pi/2 is undefined')
-        return math.tan(angle)
+        return tangent(angle)
 
     def logarithm(self, a, base=math.e):
         if a <= 0 or base <= 1:
             raise ValueError('Logarithm of non-positive number or invalid base')
-        return math.log(a, base)
+        return logarithm(a, base)
