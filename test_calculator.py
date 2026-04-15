@@ -39,6 +39,5 @@ class TestCalculator(unittest.TestCase):
     def test_square_root(self):
         self.assertEqual(self.calc.square_root(4), 2)
         self.assertRaises(CalculatorError, self.calc.square_root, -1)
-
 if __name__ == '__main__':
     unittest.main()
