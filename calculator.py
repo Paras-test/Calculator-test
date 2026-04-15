@@ -1,103 +1,50 @@
 import math
-from calculator_error import CalculatorError
-import logging
-def sin(x):
-    return math.sin(x)
-def cos(x):
-    return math.cos(x)
-def tan(x):
-    return math.tan(x)
-def log(x):
-    if x <= 0:
-        raise CalculatorError('Cannot take logarithm of non-positive number')
-    return math.log(x)
-logging.basicConfig(filename='calculator.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
 class Calculator:
-
-    def evaluate_expression(self, expression: str) -> float:
-        logging.info(f'Evaluating expression: {expression}')
-
-        try:
-            return eval(expression)
-        except Exception as e:
-            raise CalculatorError(f"Failed to evaluate expression: {str(e)}")
-    def add(self, a: float, b: float) -> float:
-        logging.info(f'Adding {a} and {b}')
-
+    def add(self, a, b):
         return a + b
 
-    def subtract(self, a: float, b: float) -> float:
-        logging.info(f'Subtracting {b} from {a}')
-
+    def subtract(self, a, b):
         return a - b
 
-    def multiply(self, a: float, b: float) -> float:
-        logging.info(f'Multiplying {a} and {b}')
-
+    def multiply(self, a, b):
         return a * b
 
-    def divide(self, a: float, b: float) -> float:
-        logging.info(f'Dividing {a} by {b}')
-
+    def divide(self, a, b):
         if b == 0:
-            raise CalculatorError("Cannot divide by zero")
+            raise CalculatorError('Division by zero')
         return a / b
 
-    def floor_divide(self, a: float, b: float) -> float:
-        logging.info(f'Floor dividing {a} by {b}')
-
+    def floor_divide(self, a, b):
         if b == 0:
-            raise CalculatorError("Cannot divide by zero")
+            raise CalculatorError('Floor division by zero')
         return a // b
 
-    def modulus(self, a: float, b: float) -> float:
-        logging.info(f'Modulus of {a} by {b}')
-
+    def modulus(self, a, b):
         if b == 0:
-            raise CalculatorError("Cannot divide by zero")
+            raise CalculatorError('Modulus by zero')
         return a % b
 
-    def power(self, a: float, b: float) -> float:
+    def power(self, a, b):
         return a ** b
 
-    def square_root(self, a: float) -> float:
+    def square_root(self, a):
         if a < 0:
-            raise CalculatorError("Cannot take square root of negative number")
+            raise CalculatorError('Square root of negative number')
         return math.sqrt(a)
-def sin(x):
-    return math.sin(x)
-def cos(x):
-    return math.cos(x)
-def tan(x):
-    return math.tan(x)
-def log(x):
-    if x <= 0:
-        raise CalculatorError('Cannot take logarithm of non-positive number')
-    return math.log(x)
-if __name__ == "__main__":
-    try:
-        print("10 + 5 =", calc.add(10, 5))
-    except Exception as e:
-        print(f"An error occurred: {e}")
-calc = Calculator()
-print("Welcome to Partial Calculator!")
-print("10 + 5 =", calc.add(10, 5))
 
-def sine(x: float) -> float:
-    return math.sin(x)
+    def sine(self, angle):
+        return math.sin(angle)
 
-def cosine(x: float) -> float:
-    return math.cos(x)
+    def cosine(self, angle):
+        return math.cos(angle)
 
-def tangent(x: float) -> float:
-    cosine_value = math.cos(x)
-    if math.isclose(cosine_value, 0.0, abs_tol=1e-12):
-        raise ValueError("tangent undefined for this input")
-    return math.tan(x)
+    def tangent(self, angle):
+        if angle == math.pi / 2:
+            raise ValueError('Tangent is undefined at pi/2')
+        return math.tan(angle)
 
-def logarithm(x: float, base: float = math.e) -> float:
-    if x <= 0:
-        raise ValueError("logarithm undefined for non-positive values")
-    if base <= 0 or math.isclose(base, 1.0, abs_tol=1e-12):
-        raise ValueError("logarithm base must be > 0 and not equal to 1")
-    return math.log(x, base)
+    def logarithm(self, value, base=math.e):
+        if value <= 0 or base <= 1:
+            raise ValueError('Logarithm of non-positive number or invalid base')
+        return math.log(value, base)
