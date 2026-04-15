@@ -82,3 +82,22 @@ if __name__ == "__main__":
 calc = Calculator()
 print("Welcome to Partial Calculator!")
 print("10 + 5 =", calc.add(10, 5))
+
+def sine(x: float) -> float:
+    return math.sin(x)
+
+def cosine(x: float) -> float:
+    return math.cos(x)
+
+def tangent(x: float) -> float:
+    cosine_value = math.cos(x)
+    if math.isclose(cosine_value, 0.0, abs_tol=1e-12):
+        raise ValueError("tangent undefined for this input")
+    return math.tan(x)
+
+def logarithm(x: float, base: float = math.e) -> float:
+    if x <= 0:
+        raise ValueError("logarithm undefined for non-positive values")
+    if base <= 0 or math.isclose(base, 1.0, abs_tol=1e-12):
+        raise ValueError("logarithm base must be > 0 and not equal to 1")
+    return math.log(x, base)
