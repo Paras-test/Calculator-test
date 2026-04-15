@@ -41,10 +41,10 @@ class Calculator:
 
     def tangent(self, angle):
         if angle == math.pi / 2:
-            raise ValueError('Tangent is undefined at pi/2')
+            raise ValueError('Tangent of pi/2 is undefined')
         return math.tan(angle)
 
-    def logarithm(self, value, base=math.e):
-        if value <= 0 or base <= 1:
+    def logarithm(self, a, base=math.e):
+        if a <= 0 or base <= 1:
             raise ValueError('Logarithm of non-positive number or invalid base')
-        return math.log(value, base)
+        return math.log(a, base)
