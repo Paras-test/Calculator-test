@@ -42,29 +42,29 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.square_root(4), 2)
         self.assertRaises(CalculatorError, self.calc.square_root, -1)
 
-def test_sine_values():
-    assert sine(0.0) == pytest.approx(0.0)
-    assert sine(math.pi / 2) == pytest.approx(1.0)
+    def test_sine_values(self):
+        assert self.calc.sine(0.0) == pytest.approx(0.0)
+        assert self.calc.sine(math.pi / 2) == pytest.approx(1.0)
 
-def test_cosine_values():
-    assert cosine(0.0) == pytest.approx(1.0)
-    assert cosine(math.pi) == pytest.approx(-1.0)
+    def test_cosine_values(self):
+        assert self.calc.cosine(0.0) == pytest.approx(1.0)
+        assert self.calc.cosine(math.pi) == pytest.approx(-1.0)
 
-def test_tangent_values():
-    assert tangent(0.0) == pytest.approx(0.0)
+    def test_tangent_values(self):
+        assert self.calc.tangent(0.0) == pytest.approx(0.0)
 
-def test_tangent_undefined():
-    with pytest.raises(ValueError):
-        tangent(math.pi / 2)
+    def test_tangent_undefined(self):
+        with pytest.raises(ValueError):
+            self.calc.tangent(math.pi / 2)
 
-def test_logarithm_values():
-    assert logarithm(100.0, 10.0) == pytest.approx(2.0)
-    assert logarithm(math.e) == pytest.approx(1.0)
+    def test_logarithm_values(self):
+        assert self.calc.logarithm(100.0, 10.0) == pytest.approx(2.0)
+        assert self.calc.logarithm(math.e) == pytest.approx(1.0)
 
-def test_logarithm_invalid_inputs():
-    with pytest.raises(ValueError):
-        logarithm(0.0)
-    with pytest.raises(ValueError):
-        logarithm(-1.0)
-    with pytest.raises(ValueError):
-        logarithm(10.0, 1.0)
+    def test_logarithm_invalid_inputs(self):
+        with pytest.raises(ValueError):
+            self.calc.logarithm(0.0)
+        with pytest.raises(ValueError):
+            self.calc.logarithm(-1.0)
+        with pytest.raises(ValueError):
+            self.calc.logarithm(10.0, 1.0)
