@@ -1,3 +1,5 @@
+import pytest
+import math
 import unittest
 from calculator import Calculator
 from calculator_error import CalculatorError
@@ -39,3 +41,30 @@ class TestCalculator(unittest.TestCase):
     def test_square_root(self):
         self.assertEqual(self.calc.square_root(4), 2)
         self.assertRaises(CalculatorError, self.calc.square_root, -1)
+
+def test_sine_values():
+    assert sine(0.0) == pytest.approx(0.0)
+    assert sine(math.pi / 2) == pytest.approx(1.0)
+
+def test_cosine_values():
+    assert cosine(0.0) == pytest.approx(1.0)
+    assert cosine(math.pi) == pytest.approx(-1.0)
+
+def test_tangent_values():
+    assert tangent(0.0) == pytest.approx(0.0)
+
+def test_tangent_undefined():
+    with pytest.raises(ValueError):
+        tangent(math.pi / 2)
+
+def test_logarithm_values():
+    assert logarithm(100.0, 10.0) == pytest.approx(2.0)
+    assert logarithm(math.e) == pytest.approx(1.0)
+
+def test_logarithm_invalid_inputs():
+    with pytest.raises(ValueError):
+        logarithm(0.0)
+    with pytest.raises(ValueError):
+        logarithm(-1.0)
+    with pytest.raises(ValueError):
+        logarithm(10.0, 1.0)
