@@ -25,4 +25,16 @@ def calculate_average(numbers):
     total_sum = sum(numbers)
     count = len(numbers)
     return total_sum / count
+
+# Define the calculate_median method
+def calculate_median(numbers):
+    if not numbers:
+        raise ValueError('Cannot calculate median of an empty list')
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    mid = n // 2
+    if n % 2 == 0:
+        return (sorted_numbers[mid - 1] + sorted_numbers[mid]) / 2
+    else:
+        return sorted_numbers[mid]
 ```
