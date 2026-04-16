@@ -24,7 +24,7 @@ class Calculator:
 
     def modulus(self, a, b):
         if b == 0:
-            raise CalculatorError('Modulus by zero')
+            raise ValueError('Modulus by zero')
         return a % b
 
     def power(self, a, b):
