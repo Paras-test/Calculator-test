@@ -17,4 +17,12 @@ def factorial(n):
         for i in range(1, n + 1):
             result *= i
         return result
+
+# Define the calculate_average method
+def calculate_average(numbers):
+    if not numbers:
+        raise ValueError('Cannot calculate average of an empty list')
+    total_sum = sum(numbers)
+    count = len(numbers)
+    return total_sum / count
 ```
